@@ -27,3 +27,25 @@ const db = mysql.createConnection({
     }
     console.log(data);
   });
+
+  const multiMenu = () => {
+    inquirer
+      .prompt([
+        {
+          type: "list",
+          name: "option",
+          message: "Choose an action:",
+          choices: [
+            "View all departments",
+            "View all roles",
+            "View all employees",
+            "Add a department",
+            "Add a role",
+            "Add an employee",
+            "Update an employee's role",
+            "Exit",
+          ],
+        },
+      ])
+      .then(handleMenuChoice);
+  };
