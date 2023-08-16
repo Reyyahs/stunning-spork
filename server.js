@@ -206,3 +206,30 @@ const db = mysql.createConnection({
         );
       });
   };
+
+  const updateEmployee = () => {
+    inquirer
+      .prompt([
+        {
+          name: "id",
+          type: "input",
+          message: "Enter the employee's id",
+        },
+        {
+          name: "newRoleId",
+          type: "input",
+          message: "Enter the new role id",
+        },
+      ])
+      .then((answer) => {
+        db.query(
+          "UPDATE employee SET role_id=? WHERE id=?",
+          [answer.newRoleId, answer.id],
+          (err, res) => {
+            if (err) throw err;
+            console.log("Employee successfully updated!");
+            multiMenu();
+          }
+        );
+      });
+  };
