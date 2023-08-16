@@ -83,3 +83,19 @@ const db = mysql.createConnection({
         break;
     }
   };
+
+  const viewDepartments = () => {
+    db.query("SELECT * FROM department", (err, res) => {
+      if (err) throw err;
+      console.table(res);
+      multiMenu();
+    });
+  };
+  
+  const viewRoles = () => {
+    db.query("SELECT * FROM role", (err, res) => {
+      if (err) throw err;
+      console.table(res);
+      multiMenu();
+    });
+  };
