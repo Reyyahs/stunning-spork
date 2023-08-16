@@ -99,3 +99,17 @@ const db = mysql.createConnection({
       multiMenu();
     });
   };
+
+  const viewEmployees = () => {
+    const query = `
+      SELECT employee.id, first_name, last_name, title, salary, name, manager_id
+      FROM ((department
+      JOIN role ON department.id = role.department_id)
+      JOIN employee ON role.id = employee.role_id);`;
+  
+    db.query(query, (err, res) => {
+      if (err) throw err;
+      console.table(res);
+      multiMenu();
+    });
+  };
