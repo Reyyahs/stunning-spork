@@ -8,3 +8,13 @@ const db = mysql.createConnection({
     password: "12341234",
     database: "company_db",
   });
+
+  db.connect((err) => {
+    if (err) {
+      console.error("Error connecting to the database:", err.stack);
+      return;
+    }
+    console.log("Connected to the database.");
+    // Launch the main menu
+    multiMenu();
+  });
