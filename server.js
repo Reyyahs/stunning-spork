@@ -18,3 +18,12 @@ const db = mysql.createConnection({
     // Launch the main menu
     multiMenu();
   });
+
+  figlet("Employee Tracker", (err, data) => {
+    if (err) {
+      console.log("Something went wrong...");
+      console.dir(err);
+      return;
+    }
+    console.log(data);
+  });
