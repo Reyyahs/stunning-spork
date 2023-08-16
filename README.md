@@ -17,7 +17,7 @@ To utilize this application, Node.js is essential. Additionally, ensure you run 
 
 To begin the application, initiate the command "mysql -u root -p" within the terminal. Then, import the database by executing the code "source db/schema.sql" and populate it with data by running "source db/seeds.sql". Once the database is operational, utilize the command "exit" to exit the MySQL environment. Following this, run "node server.js" in your terminal. Proceed by choosing the desired action. Upon making your selection, data will either be exhibited or you'll be prompted to input data and make choices to finalize the operation.
 
-Employee Tracker Video Demonstration: 
+Employee Tracker Video Demonstration: https://drive.google.com/file/d/1YWuMsVFbRQrFw_WRByoRIV9jI6xj4IVh/view
 
 ## Credits
 
